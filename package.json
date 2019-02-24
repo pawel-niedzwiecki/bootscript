@@ -1,0 +1,29 @@
+{
+  "name": "bootscript",
+  "version": "1.0.0",
+  "description": "bootscript framework css fast bulding",
+  "main": "root.js",
+  "scripts": {
+    "bootscript": "nodemon --watch webpack.config.js --exec \"webpack\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Na3Group/bootscript.git"
+  },
+  "keywords": [
+    "css",
+    "framework",
+    "bootscript"
+  ],
+  "author": "Paweł Niedźwiecki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Na3Group/bootscript/issues"
+  },
+  "homepage": "https://github.com/Na3Group/bootscript#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.10",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3"
+  }
+}
