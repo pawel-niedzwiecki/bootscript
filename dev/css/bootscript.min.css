@@ -1,0 +1,14 @@
+body {
+  background: black; }
+  body p {
+    color: aqua; }
+
+.label {
+  -ms-user-select: none;
+      user-select: none; }
+
+.upa {
+  color: red; }
+
+
+/*# sourceMappingURL=bootscript.min.css.map*/
