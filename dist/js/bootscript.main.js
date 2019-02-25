@@ -93,7 +93,13 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var kupa = "kupaxxcdcdcd";
+var kupa = "xxx";
+
+var sum = function sum(a, b) {
+  return a + b;
+};
+
+console.log(kupa);
 
 /***/ })
 

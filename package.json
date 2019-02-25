@@ -15,13 +15,17 @@
     "framework",
     "bootscript"
   ],
-  "author": "Paweł Niedźwiecki",
+  "author": "Na3 Group",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Na3Group/bootscript/issues"
   },
   "homepage": "https://github.com/Na3Group/bootscript#readme",
   "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
     "nodemon": "^1.18.10",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3"
