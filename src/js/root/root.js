@@ -1,4 +1,4 @@
-require('./../../../dev/css/global.css');
+require('./../../../dev/css/bootscript.css');
 
 const kupa = "xxx";
 
