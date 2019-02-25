@@ -86,6 +86,21 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./dev/css/global.css":
+/*!****************************!*\
+  !*** ./dev/css/global.css ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, "body {\n    background: red;\n    margin: 0;\n    padding: 0;\n}", ""]);
+
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/runtime/api.js":
 /*!*****************************************************!*\
   !*** ./node_modules/css-loader/dist/runtime/api.js ***!
@@ -182,21 +197,6 @@ function toComment(sourceMap) {
 
 /***/ }),
 
-/***/ "./src/css/global.css":
-/*!****************************!*\
-  !*** ./src/css/global.css ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, "body {\n    background: red;\n}", ""]);
-
-
-
-/***/ }),
-
 /***/ "./src/js/root/root.js":
 /*!*****************************!*\
   !*** ./src/js/root/root.js ***!
@@ -204,7 +204,7 @@ exports.push([module.i, "body {\n    background: red;\n}", ""]);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./../../css/global.css */ "./src/css/global.css");
+__webpack_require__(/*! ./../../../dev/css/global.css */ "./dev/css/global.css");
 
 var kupa = "xxx";
 
@@ -212,7 +212,7 @@ var sum = function sum(a, b) {
   return a + b;
 };
 
-console.log(kupa);
+console.log(sum(4, 5));
 
 /***/ })
 

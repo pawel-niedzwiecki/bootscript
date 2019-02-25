@@ -1,7 +1,7 @@
-require('./../../css/global.css');
+require('./../../../dev/css/global.css');
 
 const kupa = "xxx";
 
 const sum = (a, b) => a + b;
 
-console.log(kupa);
+console.log(sum(4, 5));
