@@ -1,13 +1,14 @@
 {
     "presets": [
-        [
-            "@babel/preset-env",
-            {
-                "targets": {
-                    "chrome": "63",
-
-                }
+        ["env", {
+            "debug": true,
+            "useBuiltIns": true,
+            "targets": {
+                "browsers": [
+                    "Chrome >= 62",
+                    "ie >= 10"
+                ]
             }
-        ]
+        }]
     ]
 }

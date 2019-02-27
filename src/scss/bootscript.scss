@@ -1,13 +1,23 @@
 body {
     background: black;
+    height: 100vh;
 
     p {
-        color: aqua;
+        color: red;
+        font-size: 50px;
     }
 }
 
 .label {
     user-select: none;
+}
+
+@font-face {
+    font-family: 'AlexB';
+    src: url('./../fonts/alexbrush-regular-webfont.woff2') format('woff2'),
+        url('./../fonts/alexbrush-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @import 'text/text';

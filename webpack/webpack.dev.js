@@ -1,23 +1,22 @@
-const merge = require('webpack-merge');
-const glob = require('glob');
+// AUTHOR NA3 GROUP
 const path = require('path');
-const webpack = require('webpack');
-
-const parts = require('./webpack.parts');
+const merge = require('webpack-merge');
+const parts = require('./webpack.root.js');
+const glob = require('glob');
 
 const config = {
-    entry: [
-        'react-hot-loader/patch',
-        './src/index.js',
-    ],
+    entry: './src/js/index.js',
     output: {
-        filename: 'bundle.js',
+        filename: './js/bootscript.js',
         path: path.resolve(__dirname, '../dist'),
     },
-    mode: 'development',
     devtool: 'source-map',
-    resolve: {
-        extensions: ['.js', '.jsx'],
+    watch: true,
+    devServer: {
+        port: 3303,
+        contentBase: path.join(__dirname, '../dist'),
+        hot: true,
+        overlay: true,
     },
 }
 
@@ -26,22 +25,14 @@ const prod = merge([
     parts.loadSCSS({
         isDev: true,
     }),
-    parts.loadImages({
+    parts.loadIMG({
         isDev: true,
     }),
-    parts.loadFonts(),
-    parts.loadHTML({
-        pluginOptions: {
-            filename: 'index.html',
-            template: path.resolve(__dirname, './../src/index.html'),
-            nimify: false,
-        }
-    }),
-
-    parts.devServer({
+    parts.loadFONT(),
+    parts.loadHTML(),
+    parts.devSERWER({
         contentBase: path.join(__dirname, '../dist'),
     }),
-
     parts.BrowserSync(),
 ]);
 

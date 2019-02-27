@@ -1,5 +1,3 @@
-require('./../../scss/bootscript.scss');
-
 const kupa = "xxx";
 
 const sum = (a, b) => a + b;

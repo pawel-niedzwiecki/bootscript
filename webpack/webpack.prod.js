@@ -1,29 +1,27 @@
-const merge = require('webpack-merge');
-const glob = require('glob');
+// AUTHOR NA3 GROUP
 const path = require('path');
+const merge = require('webpack-merge');
+const parts = require('./webpack.root.js');
+const glob = require('glob');
 
-const parts = require('./webpack.parts');
- 
 const config = {
-    entry: {
-        app: './src/index.js',
-        //libs: ['react', 'react-dom', 'react-css-modules'],
-    },
+    entry: './src/js/index.js',
     output: {
-        filename: '[name].[chunkhash].js',
+        filename: './js/bootscript.js',
         path: path.resolve(__dirname, '../dist'),
     },
-    mode: 'production',
-    devtool: false,
-    resolve: {
-        extensions: ['.js', '.jsx'],
+    devServer: {
+        port: 3303,
+        contentBase: path.join(__dirname, '../dist'),
+        hot: true,
+        overlay: true,
     },
 }
 
 const prod = merge([
     parts.loadJS(),
     parts.loadSCSS(),
-    parts.loadImages({
+    parts.loadIMG({
         imageOptions: {
             mozjpeg: {
                 progressive: true,
@@ -31,31 +29,25 @@ const prod = merge([
             }
         }
     }),
-    parts.loadFonts(),
-    parts.loadHTML({
-        pluginOptions: {
-            filename: 'index.html',
-            template: path.resolve(__dirname, './../src/index.html'),
-            nimify: {},
-        }
-    }),
+    parts.loadFONT(),
+    parts.loadHTML(),
     parts.CleanPlugin({
         paths: ['dist'],
         options: {
             root: path.resolve(__dirname, '..'),
         }
     }),
-
     parts.PurifyCSSPlugin({
-        paths: glob.sync(path.join(__dirname, '/src/**/*.(js|jsx)'), { nodir: true }),
+        paths: glob.sync(path.join(__dirname, '/src/**/*.(js|jsx)'), {
+            nodir: true
+        }),
         purifyOptions: {
             whitelist: ['*purify*'],
             minify: true,
         }
     }),
-
     parts.CompressionPlugin(),
-    parts.extractBundle(),
+
 ]);
 
 
