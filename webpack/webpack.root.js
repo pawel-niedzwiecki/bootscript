@@ -43,7 +43,7 @@ module.exports.BrowserSync = ({
     port = 3301,
     proxy = 'http://localhost:3305',
     options = {
-        reload: false,
+        reload: true,
     }
 } = {}) => {
 
