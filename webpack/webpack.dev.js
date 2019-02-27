@@ -22,14 +22,13 @@ const config = {
 
 const prod = merge([
     parts.loadJS(),
-    parts.loadSCSS({
-        isDev: true,
-    }),
+    parts.loadSCSS(),
     parts.loadIMG({
         isDev: true,
     }),
     parts.loadFONT(),
     parts.loadHTML(),
+
     parts.devSERWER({
         contentBase: path.join(__dirname, '../dist'),
     }),

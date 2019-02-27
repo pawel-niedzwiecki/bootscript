@@ -92,10 +92,7 @@ module.exports.loadSCSS = ({
         filename: './css/bootscript.css',
         allChunks: true,
     },
-    isDev = false,
 } = {}) => {
-
-    extractOptions.disable = isDev;
 
     return {
         module: {
